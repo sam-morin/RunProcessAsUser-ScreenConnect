@@ -150,7 +150,7 @@ Procedure Main()
       EndSelect
     Next
     FirstElement(Params())
-    Param1$ = "" : Param2$ = "" : Param3$ = ""
+    Param1$ = "" : Param2$ = "" : Param3$ = "" : Param4$ = "" : Param5$ = ""
     Select sParamC
       Case 0
         PrintN("Error: No Parameters Given.")
@@ -160,14 +160,14 @@ Procedure Main()
         Param1$ = Params()
         PrintN("")
         PrintN("Attempting To Run: " + #DQUOTE$ + Param1$ + #DQUOTE$)
-        RPAU_(Param1$, #Null$, #Null$, RunProgramHidden, "NORMAL")
+        RPAU_(Param1$, #Null$, #Null$, #Null$, #Null$, RunProgramHidden, "NORMAL")
       Case 2
         Param1$ = Params()
         NextElement(Params())
         Param2$ = Params()
         PrintN("")
         PrintN("Attempting To Run: " + #DQUOTE$ + Param1$ + " " + Param2$ + #DQUOTE$)
-        RPAU_(Param1$, Param2$, #Null$, RunProgramHidden, "NORMAL")
+        RPAU_(Param1$, Param2$, #Null$, #Null$, #Null$, RunProgramHidden, "NORMAL")
       Case 3
         Param1$ = Params()
         NextElement(Params())
@@ -176,9 +176,33 @@ Procedure Main()
         Param3$ = Params()
         PrintN("")
         PrintN("Attempting To Run: " + #DQUOTE$ + Param1$ + " " + Param2$ + #DQUOTE$ + " in Directory: " + #DQUOTE$ + Param3$ + #DQUOTE$)
-        RPAU_(Param1$, Param2$, Param3$, RunProgramHidden, "NORMAL")
+        RPAU_(Param1$, Param2$, Param3$, #Null$, #Null$, RunProgramHidden, "NORMAL")
+      Case 4
+        Param1$ = Params()
+        NextElement(Params())
+        Param2$ = Params()
+        NextElement(Params())
+        Param3$ = Params()
+        NextElement(Params())
+        Param4$ = Params()
+        PrintN("")
+        PrintN("Attempting To Run: " + #DQUOTE$ + Param1$ + " " + Param2$ + #DQUOTE$ + " " + Param3$ + #DQUOTE$ + " in Directory: " + #DQUOTE$ + Param4$ + #DQUOTE$)
+        RPAU_(Param1$, Param2$, Param3$, Param4$, #Null$, RunProgramHidden, "NORMAL")
+      Case 5
+        Param1$ = Params()
+        NextElement(Params())
+        Param2$ = Params()
+        NextElement(Params())
+        Param3$ = Params()
+        NextElement(Params())
+        Param4$ = Params()
+        NextElement(Params())
+        Param5$ = Params()
+        PrintN("")
+        PrintN("Attempting To Run: " + #DQUOTE$ + Param1$ + " " + Param2$ + #DQUOTE$ + " " + Param3$ + #DQUOTE$ + " " + Param4$ + #DQUOTE$ + " in Directory: " + #DQUOTE$ + Param5$ + #DQUOTE$)
+        RPAU_(Param1$, Param2$, Param3$, Param4$, Param5$, RunProgramHidden, "NORMAL")
       Default
-        PrintN("Error: Too Many Parameters, Cannot Be Greater Than 3")
+        PrintN("Error: Too Many Parameters, Cannot Be Greater Than 5")
         PrintHelp()
         End
     EndSelect
